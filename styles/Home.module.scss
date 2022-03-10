@@ -1,0 +1,107 @@
+.container {
+  font-family: 'Kumbh Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 2.5rem 0;
+}
+
+.selector {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 373px;
+  width: 90%;
+  height: 3.5em;
+  background-color: #161932;
+  border-radius: 3em;
+  z-index: 1;
+}
+
+.selector-item {
+  font-size: 12px;
+  font-weight: bold;
+  color: #eff1fa;
+  width: 30%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #f87070;
+  width: full;
+  height: full;
+  border-radius: 2em;
+  color: #161932;
+}
+
+.first-circle {
+  width: 16em;
+  height: 16em;
+  background: linear-gradient(320deg, #2e325a, #0e112a);
+  border-radius: 50%;
+  box-shadow: -10px -20px 20px #2e325a, 3px -20px 20px #0e112a;
+  margin: 3em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-circle {
+  width: 14em;
+  height: 14em;
+  background: #161932;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-circle {
+  height: 100%;
+  width: 100%;
+  fill: none;
+  stroke: #f87070;
+  stroke-width: 0.2em;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  animation: anim 2s linear forwards;
+}
+
+.svg {
+  position: absolute;
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.timer {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.controller {
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  text-align: center;
+}
+
+.settings-icon {
+  cursor: pointer;
+  margin-top: 2em;
+}
