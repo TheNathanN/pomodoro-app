@@ -6,10 +6,17 @@
   justify-content: center;
 }
 
+.settings {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 }
 
 .selector {
@@ -66,6 +73,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .loading-circle {
@@ -89,6 +97,10 @@
   }
 }
 
+.timer-container {
+  z-index: 2;
+}
+
 .timer {
   font-size: 4em;
   font-weight: bold;
@@ -99,9 +111,99 @@
   font-weight: 600;
   letter-spacing: 0.5em;
   text-align: center;
+  margin-top: 0.5em;
 }
 
 .settings-icon {
   cursor: pointer;
   margin-top: 2em;
+}
+
+.settings-bg {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.342);
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #161932;
+}
+
+.settings-container {
+  background-color: white;
+  width: 90%;
+  height: 85%;
+  border-radius: 10px;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #979797;
+  padding: 1.5em 1em;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  img {
+    cursor: pointer;
+  }
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5em;
+  h3 {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+  .duration {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin: 2em 0;
+    width: 100%;
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1em;
+      p {
+        color: #979797;
+        letter-spacing: 0em;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .input-item {
+        position: relative;
+        input {
+          border: none;
+          outline: none;
+          background-color: #eff1fa;
+          padding: 1em;
+          width: 11em;
+          border-radius: 10px;
+          color: #161932;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .btn-container {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          right: 1em;
+          top: 0em;
+          height: 4em;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
 }
