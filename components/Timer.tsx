@@ -1,15 +1,12 @@
-import React, { SetStateAction } from 'react';
+import React, { useState, SetStateAction } from 'react';
 import LoadingCircle from './LoadingCircle';
 import styles from '../styles/Home.module.scss';
 
-interface Props {
-  minutes: number | string;
-  seconds: number | string;
-  isPaused: boolean;
-  setIsPaused: React.Dispatch<SetStateAction<boolean>>;
-}
+export default function Timer() {
+  const [minutes, setMinutes] = useState<number | string>(25);
+  const [seconds, setSeconds] = useState<number | string>('00');
+  const [isPaused, setIsPaused] = useState(true);
 
-export default function Timer({ minutes, seconds, isPaused, setIsPaused }) {
   return (
     <div className={styles['first-circle']}>
       <div className={styles['second-circle']}>
@@ -20,7 +17,12 @@ export default function Timer({ minutes, seconds, isPaused, setIsPaused }) {
           <p className={styles.timer}>
             {minutes}:{seconds}
           </p>
-          <p className={styles.controller}>{isPaused ? 'START' : 'PAUSE'}</p>
+          <p
+            className={styles.controller}
+            onClick={() => setIsPaused(!isPaused)}
+          >
+            {isPaused ? 'START' : 'PAUSE'}
+          </p>
         </div>
       </div>
     </div>

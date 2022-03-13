@@ -1,4 +1,5 @@
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction, useContext } from 'react';
+import AppContext from '../context/AppContext';
 import { SelectOption } from '../utils/types';
 import styles from '../styles/Home.module.scss';
 
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function Selector({ selected, setSelected }: Props) {
+  const { colorSetting } = useContext(AppContext);
   return (
     <div className={styles.selector}>
       <p
@@ -15,6 +17,21 @@ export default function Selector({ selected, setSelected }: Props) {
           selected === 'pomodoro'
             ? `${styles['selector-item']} ${styles.selected}`
             : styles['selector-item']
+        }
+        style={
+          selected === 'pomodoro' && colorSetting === 'red'
+            ? {
+                backgroundColor: '#f87070',
+              }
+            : selected === 'pomodoro' && colorSetting === 'blue'
+            ? {
+                backgroundColor: '#70F3F8',
+              }
+            : selected === 'pomodoro' && colorSetting === 'purple'
+            ? {
+                backgroundColor: '#D881F8',
+              }
+            : {}
         }
         onClick={() => setSelected('pomodoro')}
       >
@@ -26,6 +43,21 @@ export default function Selector({ selected, setSelected }: Props) {
             ? `${styles['selector-item']} ${styles.selected}`
             : styles['selector-item']
         }
+        style={
+          selected === 'short' && colorSetting === 'red'
+            ? {
+                backgroundColor: '#f87070',
+              }
+            : selected === 'short' && colorSetting === 'blue'
+            ? {
+                backgroundColor: '#70F3F8',
+              }
+            : selected === 'short' && colorSetting === 'purple'
+            ? {
+                backgroundColor: '#D881F8',
+              }
+            : {}
+        }
         onClick={() => setSelected('short')}
       >
         short break
@@ -35,6 +67,21 @@ export default function Selector({ selected, setSelected }: Props) {
           selected === 'long'
             ? `${styles['selector-item']} ${styles.selected}`
             : styles['selector-item']
+        }
+        style={
+          selected === 'long' && colorSetting === 'red'
+            ? {
+                backgroundColor: '#f87070',
+              }
+            : selected === 'long' && colorSetting === 'blue'
+            ? {
+                backgroundColor: '#70F3F8',
+              }
+            : selected === 'long' && colorSetting === 'purple'
+            ? {
+                backgroundColor: '#D881F8',
+              }
+            : {}
         }
         onClick={() => setSelected('long')}
       >
