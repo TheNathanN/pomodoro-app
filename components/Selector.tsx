@@ -1,15 +1,9 @@
-import React, { SetStateAction, useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import { SelectOption } from '../utils/types';
 import styles from '../styles/Home.module.scss';
 
-interface Props {
-  selected: SelectOption;
-  setSelected: React.Dispatch<SetStateAction<SelectOption>>;
-}
-
-export default function Selector({ selected, setSelected }: Props) {
-  const { colorSetting } = useContext(AppContext);
+export default function Selector() {
+  const { colorSetting, selected, setSelected } = useContext(AppContext);
   return (
     <div className={styles.selector}>
       <p

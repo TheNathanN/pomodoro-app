@@ -1,11 +1,37 @@
-import React, { useState, SetStateAction } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { useTimer } from 'reactjs-countdown-hook';
+import AppContext from '../context/AppContext';
 import LoadingCircle from './LoadingCircle';
 import styles from '../styles/Home.module.scss';
 
 export default function Timer() {
-  const [minutes, setMinutes] = useState<number | string>(25);
-  const [seconds, setSeconds] = useState<number | string>('00');
-  const [isPaused, setIsPaused] = useState(true);
+  const { pomSetting, longSetting, shortSetting, selected } =
+    useContext(AppContext);
+
+  const startingMinutes =
+    selected === 'pomodoro'
+      ? pomSetting
+      : selected === 'long'
+      ? longSetting
+      : shortSetting;
+  let time = startingMinutes * 60;
+
+  const {
+    isActive,
+    counter,
+    seconds,
+    minutes,
+    hours,
+    days,
+    pause,
+    resume,
+    reset,
+  } = useTimer(time);
+
+  useEffect(() => {
+    reset();
+    pause();
+  }, [startingMinutes, pause, reset]);
 
   return (
     <div className={styles['first-circle']}>
@@ -14,14 +40,20 @@ export default function Timer() {
         <LoadingCircle />
         {/* Timer */}
         <div className={styles['timer-container']}>
-          <p className={styles.timer}>
-            {minutes}:{seconds}
-          </p>
+          <p className={styles.timer}>{`${
+            minutes && minutes !== '00'
+              ? minutes
+              : selected === 'pomodoro'
+              ? pomSetting
+              : selected === 'long'
+              ? longSetting
+              : `0${shortSetting}`
+          }:${seconds ? seconds : '00'}`}</p>
           <p
             className={styles.controller}
-            onClick={() => setIsPaused(!isPaused)}
+            onClick={() => (!isActive ? resume() : pause())}
           >
-            {isPaused ? 'START' : 'PAUSE'}
+            {!isActive ? 'START' : 'PAUSE'}
           </p>
         </div>
       </div>

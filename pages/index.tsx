@@ -1,5 +1,4 @@
-import { useState, useContext } from 'react';
-import { SelectOption } from '../utils/types';
+import { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
@@ -8,10 +7,8 @@ import Timer from '../components/Timer';
 import SettingsModal from '../components/modals/SettingsModal';
 
 export default function Home() {
-  const { fontSetting } = useContext(AppContext);
-
-  const [selected, setSelected] = useState<SelectOption>('pomodoro');
-  const [settingsHidden, setSettingsHidden] = useState(true);
+  const { fontSetting, settingsHidden, setSettingsHidden } =
+    useContext(AppContext);
 
   return (
     <div
@@ -33,13 +30,11 @@ export default function Home() {
       }
     >
       {/* SettingsModal is hidden unless !settingsHidden */}
-      {!settingsHidden && (
-        <SettingsModal setSettingsHidden={setSettingsHidden} />
-      )}
+      {!settingsHidden && <SettingsModal />}
       {/* Logo */}
       <h1 className={styles.logo}>pomodoro</h1>
       {/* Select Bar */}
-      <Selector selected={selected} setSelected={setSelected} />
+      <Selector />
       {/* Timer Section */}
       <Timer />
       {/* Settings Button */}

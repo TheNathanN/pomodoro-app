@@ -1,15 +1,12 @@
-import React, { useState, SetStateAction } from 'react';
-import Image from 'next/image';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 import styles from '../../styles/Home.module.scss';
 import DurationSettings from '../settings/DurationSettings';
 import FontSettings from '../settings/FontSettings';
 import ColorSettings from '../settings/ColorSettings';
 
-interface Props {
-  setSettingsHidden: React.Dispatch<SetStateAction<boolean>>;
-}
-
-export default function SettingsModal({ setSettingsHidden }: Props) {
+export default function SettingsModal() {
+  const { setSettingsHidden } = useContext(AppContext);
   return (
     <div className={styles['settings-bg']}>
       <section className={styles['settings-container']}>
