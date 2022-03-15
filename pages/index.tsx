@@ -3,7 +3,7 @@ import AppContext from '../context/AppContext';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 import Selector from '../components/Selector';
-import Timer from '../components/Timer';
+import TimerComp from '../components/TimerComp';
 import SettingsModal from '../components/modals/SettingsModal';
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
       {/* Select Bar */}
       <Selector />
       {/* Timer Section */}
-      <Timer />
+      <TimerComp />
       {/* Settings Button */}
       <div
         className={styles['settings-icon']}
