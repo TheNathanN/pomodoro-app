@@ -20,6 +20,7 @@ export default function CountdownCircle() {
   return (
     <div onClick={() => setIsActive(!isActive)}>
       <CountdownCircleTimer
+        key={time}
         isPlaying={isActive ? true : false}
         duration={time}
         initialRemainingTime={time}
@@ -30,7 +31,7 @@ export default function CountdownCircle() {
             ? '#70F3F8'
             : '#D881F8'
         }
-        size={200}
+        size={248}
         strokeWidth={9}
         rotation='counterclockwise'
         trailColor='#161932'
