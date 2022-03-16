@@ -41,7 +41,6 @@ export default function CountdownCircle() {
     };
 
     window.addEventListener('resize', handleResize);
-    console.log('rendered');
   }, [windowWidth, setWindowWidth, time]);
 
   return (
