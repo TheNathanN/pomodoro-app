@@ -30,17 +30,18 @@ export default function CountdownCircle() {
   useEffect(() => {
     setTimerKey(time);
 
-    if (windowWidth >= 768 || window.screen.width >= 768) {
+    if (windowWidth >= 583 || window.innerWidth >= 583) {
       setCircleSize(340);
     } else {
-      setCircleSize(260);
+      setCircleSize(250);
     }
 
     const handleResize = () => {
-      setWindowWidth(window.screen.width);
+      setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener('resize', handleResize);
+    console.log('rendered');
   }, [windowWidth, setWindowWidth, time]);
 
   return (
