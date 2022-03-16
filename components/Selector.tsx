@@ -3,7 +3,8 @@ import AppContext from '../context/AppContext';
 import styles from '../styles/Home.module.scss';
 
 export default function Selector() {
-  const { colorSetting, selected, setSelected } = useContext(AppContext);
+  const { colorSetting, selected, setSelected, setIsActive } =
+    useContext(AppContext);
   return (
     <div className={styles.selector}>
       <p
@@ -27,7 +28,10 @@ export default function Selector() {
               }
             : {}
         }
-        onClick={() => setSelected('pomodoro')}
+        onClick={() => {
+          setIsActive(false);
+          setSelected('pomodoro');
+        }}
       >
         pomodoro
       </p>
@@ -52,7 +56,10 @@ export default function Selector() {
               }
             : {}
         }
-        onClick={() => setSelected('short')}
+        onClick={() => {
+          setIsActive(false);
+          setSelected('short');
+        }}
       >
         short break
       </p>
@@ -77,7 +84,10 @@ export default function Selector() {
               }
             : {}
         }
-        onClick={() => setSelected('long')}
+        onClick={() => {
+          setIsActive(false);
+          setSelected('long');
+        }}
       >
         long break
       </p>

@@ -31,10 +31,9 @@ export default function Home() {
     >
       {/* SettingsModal is hidden unless !settingsHidden */}
       {!settingsHidden && <SettingsModal />}
+      {/* Logo & Select Bar */}
       <div className={styles['header-container']}>
-        {/* Logo */}
         <h1 className={styles.logo}>pomodoro</h1>
-        {/* Select Bar */}
         <Selector />
       </div>
       {/* Timer Section */}

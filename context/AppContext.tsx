@@ -20,6 +20,8 @@ let selected: 'pomodoro' | 'long' | 'short';
 let setSelected: React.Dispatch<
   React.SetStateAction<'pomodoro' | 'long' | 'short'>
 >;
+let isActive: boolean;
+let setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 
 const AppContext = createContext({
   pomSetting,
@@ -36,6 +38,8 @@ const AppContext = createContext({
   setColorSetting,
   selected,
   setSelected,
+  isActive,
+  setIsActive,
 });
 
 export default AppContext;

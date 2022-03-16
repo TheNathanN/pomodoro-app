@@ -100,7 +100,7 @@
 }
 
 .timer {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: bold;
   width: 100%;
 }
@@ -108,12 +108,12 @@
 .controller {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.5em;
+  letter-spacing: 13px;
   text-align: center;
   margin-top: 0.5em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 583px) {
   .logo {
     margin: 3rem 0;
   }
@@ -133,11 +133,12 @@
   }
 
   .timer {
-    font-size: 100px;
+    font-size: 95px;
   }
 
   .controller {
     font-size: 16px;
+    letter-spacing: 15px;
   }
 }
 
@@ -354,9 +355,10 @@
   }
 }
 
-@media (min-width: 500px) {
-  // .settings-container {
-  // }
+@media (min-width: 583px) {
+  .settings-container {
+    height: fit-content;
+  }
 
   .duration {
     .duration-input-container {
@@ -375,8 +377,10 @@
   .font {
     flex-direction: row;
     align-items: center;
+    padding-bottom: 1.5em;
     .font-option-container {
       justify-content: end;
+      margin-bottom: 0;
     }
   }
 
@@ -385,6 +389,7 @@
     align-items: center;
     .color-option-container {
       justify-content: end;
+      align-items: center;
     }
   }
 }

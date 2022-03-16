@@ -15,6 +15,7 @@ export default function AppState(props) {
   const [selected, setSelected] = useState<'pomodoro' | 'long' | 'short'>(
     'pomodoro'
   );
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <AppContext.Provider
@@ -33,6 +34,8 @@ export default function AppState(props) {
         setColorSetting,
         selected,
         setSelected,
+        isActive,
+        setIsActive,
       }}
     >
       {props.children}
