@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  max-height: 995px;
 }
 
 .settings {
@@ -12,6 +12,14 @@
   width: 100vw;
   overflow: hidden;
   position: relative;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -52,6 +60,16 @@
   color: #161932;
 }
 
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
 .first-circle {
   width: 300px;
   height: 300px;
@@ -77,47 +95,59 @@
   cursor: pointer;
 }
 
-.loading-circle {
-  height: 100%;
-  width: 100%;
-  fill: none;
-  stroke-width: 0.2em;
-  stroke-dasharray: 283;
-  stroke-dashoffset: 283;
-  animation: anim 2s linear forwards;
-}
-
-.svg {
-  position: absolute;
-}
-
-@keyframes anim {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 .timer-container {
   z-index: 2;
 }
 
 .timer {
-  font-size: 3.5em;
+  font-size: 80px;
   font-weight: bold;
   width: 100%;
 }
 
 .controller {
-  font-size: 0.8em;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5em;
   text-align: center;
   margin-top: 0.5em;
 }
 
+@media (min-width: 768px) {
+  .logo {
+    margin: 3rem 0;
+  }
+
+  .selector-item {
+    font-size: 14px;
+  }
+
+  .first-circle {
+    width: 410px;
+    height: 410px;
+  }
+
+  .second-circle {
+    width: 366px;
+    height: 366px;
+  }
+
+  .timer {
+    font-size: 100px;
+  }
+
+  .controller {
+    font-size: 16px;
+  }
+}
+
 .settings-icon {
   cursor: pointer;
-  margin: 2em 0;
+  margin-bottom: 5em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .settings-bg {
@@ -136,6 +166,7 @@
   background-color: white;
   width: 90%;
   height: 85%;
+  max-width: 540px;
   border-radius: 10px;
   overflow: scroll;
   display: flex;
@@ -187,7 +218,7 @@
   padding: 0 1.5em;
   h3 {
     text-align: center;
-    margin-bottom: 1.5em;
+    margin: 1em 0;
   }
 }
 
@@ -289,10 +320,13 @@
 }
 
 .color {
-  width: 100%;
   padding-bottom: 2em;
   padding-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   .color-option-container {
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -317,5 +351,40 @@
   }
   .purple {
     background-color: #d881f8;
+  }
+}
+
+@media (min-width: 500px) {
+  // .settings-container {
+  // }
+
+  .duration {
+    .duration-input-container {
+      display: flex;
+    }
+    .input-container {
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      p {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .font {
+    flex-direction: row;
+    align-items: center;
+    .font-option-container {
+      justify-content: end;
+    }
+  }
+
+  .color {
+    flex-direction: row;
+    align-items: center;
+    .color-option-container {
+      justify-content: end;
+    }
   }
 }

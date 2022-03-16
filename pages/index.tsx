@@ -31,12 +31,16 @@ export default function Home() {
     >
       {/* SettingsModal is hidden unless !settingsHidden */}
       {!settingsHidden && <SettingsModal />}
-      {/* Logo */}
-      <h1 className={styles.logo}>pomodoro</h1>
-      {/* Select Bar */}
-      <Selector />
+      <div className={styles['header-container']}>
+        {/* Logo */}
+        <h1 className={styles.logo}>pomodoro</h1>
+        {/* Select Bar */}
+        <Selector />
+      </div>
       {/* Timer Section */}
-      <TimerComp />
+      <div className={styles['timer-container']}>
+        <TimerComp />
+      </div>
       {/* Settings Button */}
       <div
         className={styles['settings-icon']}

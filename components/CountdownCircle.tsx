@@ -4,6 +4,8 @@ import AppContext from '../context/AppContext';
 import styles from '../styles/Home.module.scss';
 
 export default function CountdownCircle() {
+  const [windowWidth, setWindowWidth] = useState<number>();
+  const [circleSize, setCircleSize] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const { pomSetting, longSetting, shortSetting, selected, colorSetting } =
     useContext(AppContext);
@@ -16,6 +18,20 @@ export default function CountdownCircle() {
       : shortSetting;
 
   const time = startingMinutes * 60;
+
+  useEffect(() => {
+    if (windowWidth >= 768 || window.screen.width >= 768) {
+      setCircleSize(339);
+    } else {
+      setCircleSize(258);
+    }
+
+    const handleResize = () => {
+      setWindowWidth(window.screen.width);
+    };
+
+    window.addEventListener('resize', handleResize);
+  }, [windowWidth, setWindowWidth]);
 
   return (
     <div onClick={() => setIsActive(!isActive)}>
@@ -31,7 +47,7 @@ export default function CountdownCircle() {
             ? '#70F3F8'
             : '#D881F8'
         }
-        size={248}
+        size={circleSize}
         strokeWidth={9}
         rotation='counterclockwise'
         trailColor='#161932'
