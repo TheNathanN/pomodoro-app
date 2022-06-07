@@ -1,6 +1,4 @@
-# Frontend Mentor - Pomodoro app solution
-
-This is a solution to the [Pomodoro app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+# Pomodoro App
 
 ## Table of contents
 
