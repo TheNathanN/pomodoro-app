@@ -25,7 +25,7 @@ Users should be able to:
 - [Typescript](https://www.typescriptlang.org/)
 - Flexbox
 - Mobile-first workflow
-- Context API State Managment
+- Context API State Management
 
 ## Link
 
