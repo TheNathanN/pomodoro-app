@@ -24,6 +24,7 @@ Users should be able to:
 
 - [Next.js](https://nextjs.org/) - React framework
 - [SCSS](https://styled-components.com/) - For styles
+- [Typescript](https://www.typescriptlang.org/)
 - Flexbox
 - Mobile-first workflow
 - Context API State Managment
