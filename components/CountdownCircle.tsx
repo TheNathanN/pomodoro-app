@@ -55,7 +55,7 @@ export default function CountdownCircle() {
           ? '#70F3F8'
           : '#D881F8'
       }
-      size={circleSize}
+      size={250}
       strokeWidth={9}
       rotation='counterclockwise'
       trailColor='#161932'
